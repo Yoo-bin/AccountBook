@@ -8,12 +8,10 @@ import {
   TrendingUp,
   TrendingDown,
   Mail,
-  Users,
   Calendar,
   Pencil,
   Trash2,
 } from 'lucide-react';
-import { useAuthStore } from '@/hooks/useAuthStore';
 import { accountbookService } from '@/services/accountbookService';
 import { transactionService } from '@/services/transactionService';
 import { categoryService } from '@/services/categoryService';
@@ -30,7 +28,6 @@ import {
 export default function AccountBookPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { user } = useAuthStore();
 
   const [accountbook, setAccountbook] = useState<AccountBook | null>(null);
   const [members, setMembers] = useState<AccountBookMember[]>([]);

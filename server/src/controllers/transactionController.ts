@@ -303,7 +303,7 @@ export const getMonthlyStats = async (req: AuthRequest, res: Response) => {
       expense: 0,
     };
 
-    totalsResult.rows.forEach((row) => {
+    totalsResult.rows.forEach((row: any) => {
       totals[row.type as 'income' | 'expense'] = parseFloat(row.total);
     });
 
